@@ -2,6 +2,12 @@
 
 現在放送中のアニメ作品を検索・フィルタリングできるWebアプリケーションです。
 
+## 🌐 デモサイト
+
+**[https://anime-list-7jfs.vercel.app/](https://anime-list-7jfs.vercel.app/)**
+
+実際のアプリケーションをお試しいただけます。
+
 ## 機能
 
 ### 📺 アニメ一覧表示
