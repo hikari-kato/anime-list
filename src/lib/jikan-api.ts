@@ -92,7 +92,7 @@ export async function getAnimeExternalLinks(animeId: number): Promise<string | n
     }
     
     // "Official Site"を検索
-    const officialSite = data.data.find((link: any) => 
+    const officialSite = data.data.find((link: { name: string; url: string }) => 
       link.name === 'Official Site' || 
       link.name === 'Official Website' ||
       link.name.toLowerCase().includes('official')
