@@ -59,6 +59,15 @@ export default function Home() {
     filterAndSortAnime(currentSearchQuery, currentGenreFilter, currentTypeFilter, currentDayFilter, sort);
   };
 
+  const handleClearFilters = () => {
+    setCurrentSearchQuery('');
+    setCurrentGenreFilter('');
+    setCurrentTypeFilter('');
+    setCurrentDayFilter('');
+    setCurrentSort('');
+    filterAndSortAnime('', '', '', '', '');
+  };
+
   const filterAndSortAnime = (searchQuery: string, genreFilter: string, typeFilter: string, dayFilter: string, sortBy: string) => {
     let filtered = [...animeList];
 
@@ -145,6 +154,7 @@ export default function Home() {
           onTypeFilter={handleTypeFilter}
           onDayFilter={handleDayFilter}
           onSortChange={handleSortChange}
+          onClearFilters={handleClearFilters}
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">

@@ -8,10 +8,11 @@ interface SearchBarProps {
   onTypeFilter: (type: string) => void;
   onDayFilter: (day: string) => void;
   onSortChange: (sortBy: string) => void;
+  onClearFilters: () => void;
   placeholder?: string;
 }
 
-export default function SearchBar({ onSearch, onGenreFilter, onTypeFilter, onDayFilter, onSortChange, placeholder = "アニメタイトルを検索..." }: SearchBarProps) {
+export default function SearchBar({ onSearch, onGenreFilter, onTypeFilter, onDayFilter, onSortChange, onClearFilters, placeholder = "アニメタイトルを検索..." }: SearchBarProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGenre, setSelectedGenre] = useState('');
   const [selectedType, setSelectedType] = useState('');
@@ -54,11 +55,7 @@ export default function SearchBar({ onSearch, onGenreFilter, onTypeFilter, onDay
     setSelectedType('');
     setSelectedDay('');
     setSelectedSort('');
-    onSearch('');
-    onGenreFilter('');
-    onTypeFilter('');
-    onDayFilter('');
-    onSortChange('');
+    onClearFilters();
   };
 
   const popularGenres = [
